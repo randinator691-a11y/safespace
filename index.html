@@ -1,0 +1,182 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSpace — You Don't Have to Face It Alone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🌱 SafeSpace</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#community">Community</a>
+    <a href="#safety">Safety</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <span class="badge">A supportive community</span>
+      <h1>You don't have to face everything alone.</h1>
+      <p>
+        A place to talk, listen and support each other.
+        You can use a pseudonym and decide how much you're comfortable sharing.
+      </p>
+
+      <div class="hero-buttons">
+        <button onclick="showCommunity()">Join the community</button>
+        <button class="secondary" onclick="showHelp()">I need help right now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="community hidden">
+
+    <div class="section-heading">
+      <span class="badge">Community</span>
+      <h2>Find a space that feels right</h2>
+      <p>You can read, share or simply listen.</p>
+    </div>
+
+    <!-- Username -->
+    <div class="username-box">
+      <label for="username">Your pseudonym</label>
+      <div class="username-row">
+        <input id="username" maxlength="20" placeholder="Choose a nickname">
+        <button onclick="saveUsername()">Save</button>
+      </div>
+      <small>
+        Don't use your real name, school, address, phone number or other private information.
+      </small>
+    </div>
+
+    <!-- Topics -->
+    <div class="topics">
+      <button class="topic active" onclick="filterTopic('all', this)">🌎 Everything</button>
+      <button class="topic" onclick="filterTopic('school', this)">📚 School</button>
+      <button class="topic" onclick="filterTopic('friends', this)">🤝 Friends</button>
+      <button class="topic" onclick="filterTopic('family', this)">🏠 Family</button>
+      <button class="topic" onclick="filterTopic('stress', this)">🌧️ Stress</button>
+      <button class="topic" onclick="filterTopic('lonely', this)">💭 Feeling lonely</button>
+    </div>
+
+    <!-- Create post -->
+    <div class="create-post card">
+      <h3>What's on your mind?</h3>
+
+      <select id="postTopic">
+        <option value="school">📚 School</option>
+        <option value="friends">🤝 Friends</option>
+        <option value="family">🏠 Family</option>
+        <option value="stress">🌧️ Stress</option>
+        <option value="lonely">💭 Feeling lonely</option>
+      </select>
+
+      <textarea
+        id="postText"
+        maxlength="500"
+        placeholder="Share what's bothering you. You don't have to share personal details."
+      ></textarea>
+
+      <div class="post-bottom">
+        <span id="characterCount">0 / 500</span>
+        <button onclick="createPost()">Share</button>
+      </div>
+
+      <p class="tiny-warning">
+        Please don't share your full name, address, school, phone number, passwords,
+        social media accounts or other identifying information.
+      </p>
+    </div>
+
+    <!-- Feed -->
+    <div id="feed"></div>
+
+  </section>
+
+  <!-- HELP -->
+  <section id="help" class="help hidden">
+    <div class="help-card">
+      <span class="badge">You matter</span>
+      <h2>What do you need right now?</h2>
+      <p>You don't have to explain everything. Choose what feels closest.</p>
+
+      <div class="help-options">
+        <button onclick="supportMessage('talk')">💬 I want to talk</button>
+        <button onclick="supportMessage('listen')">👂 I want someone to listen</button>
+        <button onclick="supportMessage('advice')">🤝 I want advice</button>
+        <button onclick="supportMessage('ideas')">🧠 I want ideas</button>
+        <button onclick="urgentHelp()">🆘 I need urgent help</button>
+      </div>
+
+      <div id="supportMessage" class="support-message"></div>
+
+      <button class="back-button" onclick="showCommunity()">← Back to community</button>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section id="safety" class="safety">
+    <div class="section-heading">
+      <span class="badge">🛡️ Safety</span>
+      <h2>Our community rules</h2>
+    </div>
+
+    <div class="safety-grid">
+
+      <div class="safety-card">
+        <h3>🔒 Protect privacy</h3>
+        <p>
+          Never ask someone for their address, school, phone number, password,
+          private photos or other identifying information.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h3>💚 Be kind</h3>
+        <p>
+          People may be sharing things that are difficult for them.
+          Don't mock, insult, threaten or shame anyone.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h3>🚩 Report problems</h3>
+        <p>
+          If something makes you uncomfortable or breaks the rules,
+          report it rather than getting into an argument.
+        </p>
+      </div>
+
+      <div class="safety-card">
+        <h3>👥 No secret relationships</h3>
+        <p>
+          Don't pressure people to move conversations somewhere private.
+          Keep support inside the moderated community.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>🌱 SafeSpace — A prototype for supportive peer conversation.</p>
+  <p>This website is not a replacement for professional or emergency help.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
